@@ -90,10 +90,10 @@ const SurveyForm = () => {
     }, [values.topic]);
     return (
         <div className="bg-slate-900 min-h-screen flex-row items-center justify-center">
-            <h1 className=' text-3xl  text-gray-400 font-sans font-semibold h-40 lg:h-20 p-10 lg:mx-20  mb-20 text-center'>Advanced Dynamic Form with Complex Conditional Logic, Dynamic
+            <h1 className=' lg:text-3xl text-2xl  text-white font-sans font-semibold h-40 lg:h-20 p-10 lg:mx-20  mb-20 text-center'>Advanced Dynamic Form with Complex Conditional Logic, Dynamic
 Sections, and Integration with an API
 </h1>
-            <div className="max-w-lg w-full box p-6 mx-auto shadow-lg rounded-lg overflow-y-auto">
+            <div className="max-w-lg lg:w-full mx-2 lg:mx-auto md:mx-auto   box p-6  shadow-lg rounded-lg overflow-y-auto">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label className="block text-gray-400 bg-s text-sm font-bold mb-2">Full Name</label>
@@ -135,107 +135,36 @@ Sections, and Integration with an API
                         {errors.topic && <p className="text-red-500 text-xs italic">{errors.topic}</p>}
                     </div>
 
-                    {values.topic === 'Technology' && (
-                        <>
-                            <div className="mb-4">
-                                <label className="block text-gray-400 text-sm font-bold mb-2">Favorite Programming Language</label>
-                                <select
-                                    name="favLanguage"
-                                    value={values.favLanguage}
-                                    onChange={handleChange}
-                                    className={`shadow appearance-none input border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.favLanguage ? 'border-red-500' : ''}`}
-                                >
-                                    <option value="">Select a language</option>
-                                    <option value="JavaScript">JavaScript</option>
-                                    <option value="Python">Python</option>
-                                    <option value="Java">Java</option>
-                                    <option value="C#">C#</option>
-                                </select>
-                                {errors.favLanguage && <p className="text-red-500 text-xs italic">{errors.favLanguage}</p>}
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="block text-gray-400 text-sm font-bold mb-2">Years of Experience</label>
-                                <input
-                                    type="number"
-                                    name="yearsExperience"
-                                    value={values.yearsExperience}
-                                    onChange={handleChange}
-                                    className={`shadow appearance-none input border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.yearsExperience ? 'border-red-500' : ''}`}
-                                />
-                                {errors.yearsExperience && <p className="text-red-500 text-xs italic">{errors.yearsExperience}</p>}
-                            </div>
-                        </>
-                    )}
-
-                    {values.topic === 'Health' && (
-                        <>
-                            <div className="mb-4">
-                                <label className="block text-gray-400 text-sm font-bold mb-2">Exercise Frequency</label>
-                                <select
-                                    name="exerciseFrequency"
-                                    value={values.exerciseFrequency}
-                                    onChange={handleChange}
-                                    className={`shadow appearance-none input border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.exerciseFrequency ? 'border-red-500' : ''}`}
-                                >
-                                    <option value="">Select frequency</option>
-                                    <option value="Daily">Daily</option>
-                                    <option value="Weekly">Weekly</option>
-                                    <option value="Monthly">Monthly</option>
-                                    <option value="Rarely">Rarely</option>
-                                </select>
-                                {errors.exerciseFrequency && <p className="text-red-500 text-xs italic">{errors.exerciseFrequency}</p>}
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="block text-gray-300 text-sm font-bold mb-2">Diet Preference</label>
-                                <select
-                                    name="dietPreference"
-                                    value={values.dietPreference}
-                                    onChange={handleChange}
-                                    className={`shadow appearance-none  input border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.dietPreference ? 'border-red-500' : ''}`}
-                                >
-                                    <option value="">Select preference</option>
-                                    <option value="Vegetarian">Vegetarian</option>
-                                    <option value="Vegan">Vegan</option>
-                                    <option value="Non-Vegetarian">Non-Vegetarian</option>
-                                </select>
-                                {errors.dietPreference && <p className="text-red-500 text-xs italic">{errors.dietPreference}</p>}
-                            </div>
-                        </>
-                    )}
-
-                    {values.topic === 'Education' && (
-                        <>
-                            <div className="mb-4">
-                                <label className="block text-gray-400 text-sm font-bold mb-2">Highest Qualification</label>
-                                <select
-                                    name="highestQualification"
-                                    value={values.highestQualification}
-                                    onChange={handleChange}
-                                    className={`shadow appearance-none input border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.highestQualification ? 'border-red-500' : ''}`}
-                                >
-                                    <option value="">Select qualification</option>
-                                    <option value="High School">High School</option>
-                                    <option value="Bachelor's">Bachelor's</option>
-                                    <option value="Master's">Master's</option>
-                                    <option value="PhD">PhD</option>
-                                </select>
-                                {errors.highestQualification && <p className="text-red-500 text-xs italic">{errors.highestQualification}</p>}
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="block text-gray-400 text-sm font-bold mb-2">Field of Study</label>
-                                <input
-                                    type="text"
-                                    name="fieldOfStudy"
-                                    value={values.fieldOfStudy}
-                                    onChange={handleChange}
-                                    className={`shadow appearance-none input border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.fieldOfStudy ? 'border-red-500' : ''}`}
-                                />
-                                {errors.fieldOfStudy && <p className="text-red-500 text-xs italic">{errors.fieldOfStudy}</p>}
-                            </div>
-                        </>
+                     {extraQuestions.length > 0 && (
+                        <div className="mb-4">
+                            <h3 className="block text-white text-xl font-bold mb-2">Additional Questions</h3>
+                            {extraQuestions.map((question, index) => (
+                                <div className="mb-4" key={index}>
+                                    <label className="block text-gray-400 text-sm font-bold mb-2">{question.question}</label>
+                                    {question.options ? (
+                                        <select
+                                            name={question.id}
+                                            value={values[question.id] || ''}
+                                            onChange={handleChange}
+                                            className="shadow appearance-none border input rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                        >
+                                            <option value="">Select an option</option>
+                                            {question.options.map((option, idx) => (
+                                                <option key={idx} value={option}>{option}</option>
+                                            ))}
+                                        </select>
+                                    ) : (
+                                        <input
+                                            type="text"
+                                            name={question.id}
+                                            value={values[question.id] || ''}
+                                            onChange={handleChange}
+                                            className="shadow appearance-none border rounded input w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                        />
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     )}
 
                     <div className="mb-4">
